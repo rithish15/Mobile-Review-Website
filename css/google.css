@@ -1,0 +1,19 @@
+.col-12{
+	background: white;
+	border-radius: 15px;
+}
+
+.col-6{
+	margin-top: 3vh;
+	margin-bottom: 3vh;
+}
+.img-center {margin:0 auto;}
+
+.row{
+	background: white;
+	border-radius: 20px;
+}
+
+.rounded-corners{
+	border-radius: 10px
+}

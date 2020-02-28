@@ -1,0 +1,83 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background:url('');
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: new time roman;
+}
+
+h1{
+	font-size: 40px;
+	color: grey;
+	margin-top: 250px;
+}
+
+p{
+	font-size:17px; 
+	color: grey
+}
+
+h3{
+	font-size: 25px;
+	color: black;
+}
+
+.col-md-5{
+	margin-top: 80px;
+	/*box-shadow: -1px 1px 60px 10px black;*/
+	border-radius: 15px;
+	background: white;
+}
+
+.label{
+	font-weight: normal;
+	margin-top: 20px;
+	color: black;
+	font-size: 19px;
+}
+
+.form-control{
+	background: transparent;
+	border-radius: 0px;
+	border: 0px;
+	border-bottom: 1px solid lightblue;
+	font-size: 18px;
+	margin-top: 15px;
+	height :40px;
+	color : white;
+}
+
+input[type=checkbox]{
+	margin-top: 15px;
+	width:15px;
+	height: 15px;
+}
+
+small{
+	font-size: 18px;
+	color: black;
+}
+
+input[type=radio]{
+	margin-top: 28px;
+}
+
+option{
+	color:grey;
+}
+
+.btn-primary{
+	margin-bottom: 10px;
+}
+
+.btn-danger{
+	margin-left: 150px;
+	margin-bottom: 10px;
+}
+.error {
+      color: red;
+   }

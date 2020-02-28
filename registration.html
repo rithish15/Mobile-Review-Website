@@ -1,0 +1,95 @@
+<DOCTYPE html>
+	<head>
+		<title>
+			registration form
+		</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/registration.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script type="text/javascript" src="js/registration1.js"></script>
+		
+
+	</head>
+	<body ng-app="app" style="background: #3AB2C5" ng-controller='val1'>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7" style="margin-top: 92px">
+					
+				<img src="new_user.jpg">
+					
+				</div>
+				<div class="col-md-5 ">
+					<div class="row">
+						<div class="col-md-6">
+							<h3>Registration form</h3>
+						</div>
+						<div class="col-md-6">
+						</div>
+					</div>
+					<hr>
+					<form name="myForm" class="form-container" onsubmit="registerfirstvalid()" method="post"  id="userForm">
+					<div class="row">
+						<label class="label col-md-2 control-label">Name</label>
+						<div class="col-md-10">
+							<input type="name" class="form-control" name="myName" ng-model="myName" id="name" placeholder="name" ng-pattern="/^[a-zA-Z][a-zA-Z\\s]+$/" required>
+							<span style="color:#3AB2C5" ng-show="myForm.myName.$error.required"> &nbsp;&nbsp; Required! </span>
+						<span style="color:#3AB2C5" ng-show="myForm.myName.$dirty&&myForm.myName.$error.pattern">&nbsp;&nbsp;Please Enter Valid name</span>
+					  </div>
+					</div>
+					<div class="row">
+						<label class="label col-md-2 control-label">Email</label>
+						<div class="col-md-10">
+							<input type="email" class="form-control" name="Email" ng-model="Email" id="email" placeholder="Email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required>   
+					    <span style="color:#3AB2C5" ng-show="myForm.Email.$error.required"> &nbsp;&nbsp; Required! </span>
+						<span style="color:#3AB2C5" ng-show="myForm.Email.$dirty&&myForm.Email.$error.pattern">&nbsp;&nbsp;Please Enter Valid Email</span></div>
+					</div>
+						<div class="row">
+						<label class="label col-md-2 control-label">Password</label>
+						<div class="col-md-10">
+							<input type="password" class="form-control" name="password" ng-model="password" id="password" placeholder="password">
+						</div>
+					</div>
+
+					<div class="row" >
+						<label class="label col-md-2 control-label">Retype password</label>
+						<div class="col-md-10">
+							<input type="password" class="form-control"  name="confirm" ng-keyup="compare(confirm)" ng-model="confirm" id="confirm" placeholder="password" />
+						<span style="color:#3AB2C5" ng-show="isconfirm || myForm.confirm.$dirty" ng-class="{true:'green',false:'red'}[isconfirm]"  > 
+                		Password {{isconfirm==true?'':'not'}} match </span> 
+						</div>
+					</div>
+				
+					<div class="row">
+						<label class="label col-md-2 control-label">Message</label>
+						<div class="col-md-10">
+							<textarea class="form-control"></textarea>
+						</div>
+					</div>
+					<br>
+					<center>
+        			<input class="submit btn btn-primary" type="submit" value="Submit">
+					</center>
+				</div>
+
+		<script> 
+        var app = angular.module('app', []); 
+        app.controller('val1', ['$scope', function ($scope) { 
+              
+            $scope.compare = function (confirm) { 
+                $scope.isconfirm = $scope.password == confirm ? 
+                        true : false; 
+            } 
+        }]); 
+    </script> 
+			</form>
+			</div>
+
+		</div>
+	</body>

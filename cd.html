@@ -1,0 +1,56 @@
+<DOCTYPE html>
+    <head>
+        <title>
+            registration form
+        </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/registration.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script type="text/javascript" src="js/registration1.js"></script>
+        
+
+    </head>
+    <body ng-app="myapp"ng-controller="MyController">
+
+    <userinfo >This will be replaced<pre>           </pre></userinfo>
+
+
+<script>
+    myapp = angular.module("myapp", []);
+    myapp.directive('userinfo', function() {
+        var directive = {};
+
+        directive.restrict = 'E'; /* restrict this directive to elements */
+
+        directive.compile = function(element, attributes) {
+            element.css("border", "1px solid #cccccc");
+
+            var linkFunction = function($scope, element, attributes) {
+                element.html("This is the new contentqbdwjdfbqjkbckqwjnckpjqnkpjcjnqpncjnn: " + $scope.firstName);
+                element.css("background-color", "#ffff00");
+            }
+
+            return linkFunction;
+        }
+
+        return directive;
+    })
+    myapp.controller("MyController", function($scope, $http) {
+        $scope.cssClass = "notificationDiv";
+
+        $scope.firstName = "Jakob";
+
+        $scope.doClick = function() {
+            console.log("doClick() called");
+        }
+    });
+</script>    
+</body>
+</html>
